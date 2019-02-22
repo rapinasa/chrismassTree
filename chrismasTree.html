@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>christmas tree</title>
+</head>
+<body>
+
+<script type="text/javascript">
+var treesLength = 18;
+var gap = '';
+var asterisk = '* ';
+var underscore = '_';
+
+for (var k = 0; k < treesLength - 1; k++) {
+  gap += ' ';
+}
+
+   for (var i = 0; i < treesLength-1; i++) {
+      if (i == 0)
+            console.log(gap + '*');
+      else if(i%2!==0){
+        	  var underscoreGap = ' ';
+          for (var u = treesLength; u > 0; u--) {
+            underscoreGap += underscore;
+            }
+            var totalGap = '';
+          for (var z = 1; z <i; z++) {
+            totalGap += '  ';
+            }
+            console.log( underscoreGap.slice(0, gap.length+1)+totalGap+underscoreGap.slice(0, gap.length+1) );
+            }
+      else {
+            var tree = '';
+            var toy = getRandomToyPlace(0, i+1);
+          for (var j = 0; j < i + 1; j++) {
+            if(j == toy && i%4!==0 ){
+            tree += 'o ';
+            }
+            else{
+             tree += asterisk;
+            }
+            }
+            console.log(gap + tree);
+        }
+     gap = gap.slice(0, gap.length - 1);
+  }
+
+  function getRandomToyPlace(min, max) {
+  return Math.floor(Math.random() * (max - min)) + min;
+}
+</script>
+
+</body>
+</html>
