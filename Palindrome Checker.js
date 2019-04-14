@@ -61,6 +61,26 @@ console.log(rot13("SERR PBQR PNZC"));
 
 
 
+
+function sumFibs(num) {
+    var one = 0;
+    var current = 1;
+    var result = 0;
+    while (current <= num) {
+        if (current % 2 !== 0) {
+            result += current;
+        }
+
+        current += one;
+        one = current - one;
+    }
+
+    return result;
+}
+
+
+
+
 function bestDriver(){
     var arr = [1,2,3,4,5,6,7,8,9,10];
   var j, temp;
