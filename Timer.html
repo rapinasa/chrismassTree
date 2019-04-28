@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<body>
+<p><span id='hour'></span>:<span id='minutes'></span>:<span id='sec'></span></p>
+
+<script>
+function getTime(){
+var date = new Date();
+var hour = document.getElementById('hour');
+var minutes = document.getElementById('minutes');
+var sec = document.getElementById('sec');
+hour.innerHTML=date.getHours();
+hour.style.color='blue';
+minutes.innerHTML=date.getMinutes();
+minutes.style.color='red';
+sec.innerHTML=date.getSeconds();
+sec.style.color='green';
+}
+function updateTime(){setInterval(
+getTime,1000);
+getTime()};
+updateTime();
+
+</script>
+</body>
+</html>
